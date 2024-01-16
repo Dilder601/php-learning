@@ -13,12 +13,18 @@
         }
         if (empty($_POST['email'])){
             $erremail = "<span style='color:red';>Email is required</span>"; 
-        } else {
+        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $erremail = "<span style='color:red';>Invalid email address</span>";
+        }
+        else {
                 $email = input_validation($_POST['email']);
         }
         if (empty($_POST['website'])){
             $errwebsite = "<span style='color:red';>Website is required</span>";  
-        } else {
+        } elseif (!filter_var($_POST['website'], FILTER_VALIDATE_URL)) {
+            $errwebsite = "<span style='color:red';>Invalid URL</span>";
+        } 
+        else {
                 $website = input_validation($_POST['website']);
         }
         if (empty($_POST['contact'])){
@@ -27,7 +33,7 @@
                 $contact = input_validation($_POST['contact']);
         }
         if (empty($_POST['comment'])){
-            $errcomment = "<span style='color:red';>Comment is required</span>";  
+            $errcomment = "";
         } else {
                 $comment = input_validation($_POST['comment']);
         }
@@ -119,12 +125,12 @@
 
         <?php
         
-        echo "Name: ".$username."<br>";
-        echo "Email: ". $email."<br>";
-        echo "Website: ".$website."<br>";
-        echo "Contact: ".$contact."<br>";
-        echo "Comment: ".$comment."<br>";
-        echo "Gender: ".$gender;
+        // echo "Name: ".$username."<br>";
+        // echo "Email: ". $email."<br>";
+        // echo "Website: ".$website."<br>";
+        // echo "Contact: ".$contact."<br>";
+        // echo "Comment: ".$comment."<br>";
+        // echo "Gender: ".$gender;
 
         ?>
         </section>
