@@ -1,0 +1,188 @@
+<!-- bank statement report html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement Report</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            margin-top: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        p,h2,h3,h4{
+            margin:0;
+            padding: 0; 
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black; 
+            text-align: center;
+        }
+
+        th {
+            background-color:rgb(147, 99, 192);
+            color: white;
+        }
+
+        /* .header-info{
+            text-align: center;
+
+        } */
+
+        .company-info{
+            background-color: azure;
+            padding: 20px; 
+        }
+
+        .com-title{
+            color: blueviolet;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .user{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #eaf7ff; 
+        }
+
+        .summary-title{
+            color: blue;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .account-summary{
+            padding: 20px;
+            background-color: azure; 
+        }
+
+        .footer{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .total-balacne{
+            text-align: end;
+        }
+
+        tbody tr td:nth-child(6){
+            text-align: end;
+        }
+
+        tfoot tr{
+            background-color:rgb(147, 99, 192);;
+            color: white;
+        }
+
+        .m-0{
+            margin: 0;
+        }
+
+        .coll-info{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        tbody tr td{
+            height: 5px;
+        }
+
+        .balance {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- bank statement report html template -->
+     <!-- header div -->
+     <div class="company-info"> 
+        <h2 class="com-title">Bhai Bhai Shramjibi Cooperative Society Ltd.</h2> 
+        <p>  Address: 24/2 Maniknagar,Mugda, Wari, Dhaka-1203</p>
+        <p> Statement Report</p> 
+    </div>
+    <div class="user">
+        <div class="user-info"> 
+            <h3>Md. Dilder Hossain</h3>
+            <h3>acconut no: 2589744</h3>
+            <h4>User Address: Dhaka</h4>
+        </div>
+    
+         <div class="user-info2"> 
+            <h3>Md. Dilder Hossain</h3>
+            <h3>acconut no: 2589744</h3>
+            <h4>User Address: Dhaka</h4>
+        </div>
+    </div>
+     
+
+     <div class="account-summary"> 
+       <h2 class="summary-title">Account Summary</h2>
+       <p>Jan: 20256</p>
+       <p>In Hand:2000</p>
+       <p>In Hand:2000</p>
+       <p>In Hand:2000</p>
+    </div>
+
+     <table>
+         <thead>
+             <tr>
+                 <th>Date</th>
+                 <th>Description</th>
+                 <th>Opening</th>
+                 <th>Debit</th>
+                 <th>Credit</th>
+                 <th>Balance</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>2024-01-01</td>
+                 <td>Transaction 1</td>
+                 <td>10000</td>
+                 <td>100.00</td>
+                 <td></td>
+                 <td class="balance">1,000.00</td>
+             </tr>
+             <tr>
+                 <td>2024-01-05</td>
+                 <td>Transaction 2</td>
+                 <td>10000</td>
+                 <td></td>
+                 <td>50.00</td>
+                 <td class="balance">950.00</td>
+             </tr>
+             <!-- Add more rows for additional transactions -->
+         </tbody>
+         <tfoot>
+            <tr>
+                <td colspan="2"> Ending Balance </td>
+                <td colspan="4" class="total-balacne"> 25700 </td>
+             </tr>
+         </tfoot>
+     </table>
+
+     <div class="footer">
+        <p style="border-top: 1px solid #000;margin-top: 30px;">Field Officer </p>
+        <p style="border-top: 1px solid #000;margin-top: 30px;">Account </p>
+        <p style="border-top: 1px solid #000;margin-top: 30px;">Manager </p>
+     </div>
+
+</body>
+</html>
