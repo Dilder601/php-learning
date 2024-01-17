@@ -50,13 +50,15 @@ $bgcolor = "#005972";
         <section class="headeroption">
             <h2><?php echo "Learn PHP"; ?> </h2>
         </section>
+
         <section class="maincontent">
         PHP Date and Time
         <span style="float: right;">
-            <?php 
+
+        <?php 
             date_default_timezone_set("Asia/Dhaka");
             echo "time ".date("h:i:sa") ."<br/>";
-            ?>
+        ?>
         </span>
         <br/>
         <hr>
