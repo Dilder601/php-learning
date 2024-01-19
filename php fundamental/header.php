@@ -39,6 +39,10 @@ $bgcolor = "#005972";
             min-height: 400px;
             padding: 20px;
         }
+
+        input[type="text"] {
+            width: 250px;
+        }
     </style>
 </head>
 
