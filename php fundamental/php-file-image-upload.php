@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
         <section class="maincontent">
-        <h1>PHP File/Image Upload</h1>   
+       PHP File/Image Upload   
        
         <span style="float: right;">
 
