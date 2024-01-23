@@ -22,6 +22,10 @@
                 print ("<pre>");
                 print_r($arrayOne);
                 print ("<pre>");
+
+                print ("<pre>");
+                print_r($arrayTwo);
+                print ("<pre>");
                 
                 
             ?>
