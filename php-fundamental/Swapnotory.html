@@ -5,9 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Portfolio</title>
     <style>
+            
         body {
             font-family: 'Times New Roman', Times, serif; 
-            background-color: #FFFFFF; 
+            background-color: #FFFFFF;  
+            margin-right: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Add a media query for smaller screens */
+        @media only screen and (max-width: 768px) {
+            .image {
+                flex-direction: column;
+            }
+            .about-info-office {
+                flex-wrap: wrap;
+            }
+            .about-us, .information {
+                border-bottom: 2px solid blue;
+                border-right: none!important;;
+            }
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2, h1 {
+            color: #026CD1; 
+        }
+
+        p {
+            color: #666;
+        }
+
+        .about-info-office { 
+            display: flex;
+           /* Add flexibility for smaller screens */
+            justify-content: space-between;
+            background-color: #eaf7ff; 
+            margin-bottom: 20px; /* Adjust spacing between sections */
+            padding: 20px; /* Add some padding */
+        }
+
+        .about-info-office .about-us,
+        .about-info-office .information,
+        .about-info-office .office {
+            width: calc(100% - 20px); /* Adjust width for smaller screens */
+            margin-bottom: 20px; /* Add spacing between sections */
+        }
+
+        .about-us, .information {
+                border-right: 2px solid blue;
+                margin-right: 10px;
+            }
+
+        .presidium-member,
+        .advisory-member,
+        .finance-member {
+            display: flex; 
+            flex-wrap: wrap; /* Add flexibility for smaller screens */
+            gap: 20px;
+            margin-bottom: 20px; /* Add spacing between sections */
+        }
+
+        .presidium-member div,
+        .advisory-member div,
+        .finance-member div {
+            width: calc(50% - 20px); /* Adjust width for smaller screens */
+        }
+
+        img {
+            max-width: 100%; /* Make images responsive */
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .image {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image:nth-child(odd) {
+            margin-left: 0; /* Reset margin for odd elements on smaller screens */
+        }
+
+        .image p {
+            text-align: justify;
+        }
+    </style>
+
+<!--  old css code
+<style>
+        body {
+            font-family: 'Times New Roman', Times, serif; 
+            background-color: #FFFFFF;  
         }
 
         section {
@@ -20,6 +114,10 @@
 
         p {
             color: #666;
+        }
+
+        h1{
+            color: #026CD1;
         }
 
         .about-info-office{ 
@@ -64,19 +162,37 @@
          img{
             height: 252px;
             width: 252px;
+            margin-top: auto;
             border-radius: 20px;
         }
 
+     
+        .image{
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            width: 50%;
+        }
         
-       
+        .image:nth-child(odd) {
+            margin-left: 50%;
+        }
+        .image p {
+            text-align: justify;
+        }
+
 
     </style>
+
+ -->
+
+ 
 </head>
-<body>
+<body class="main">
 
     <header>
         <!-- <h1  style="color: #006B85;">Swapnotory</h1> -->
-        <p>Welcome to our Swapnotory</p>
+     <marquee behavior="" direction=""><p>Welcome to our Swapnotory</p></marquee>   
     </header>
 
     <section id="mission">
@@ -103,7 +219,7 @@
 
     
     <div class="all-employee-info">
-        <h1 style="text-align: center;">From Board of Directors</h1>
+        <h1 style="text-align: center; color: red;">From Board of Directors</h1>
         <div class="image">
             <img src="https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705881600&semt=sph" alt="">
             <div class="user-elius">
@@ -129,13 +245,17 @@
                 <h1>MD.GOLAM RABBANI</h1>
                 <h3>Director of Administration</h3>
                 <p>
-                    First of all I thank the Almighty Allah. In the name of almighty Allah we have founded a company named of the “Swapnotory” by some energetic young people. 
-                    Basically our main focus is how we can become self-sufficient by a little saving & investing. Our journey with this goal in mind. The “swapnotory” 
-                    spread beyond the borders of the country to the outside world it is our aim. I also hope that the world will recognize the newly developed Bangladesh
-                     through this organization. I hope many unemployed people will get employment through our company & will greatly contribute to the country's economy. 
-                     Our plan is to we are create all the practical products people need from the time they wake up to the time they go to sleep. I believe “swapnotory” 
-                     will contribute significantly to the social development of the country and in all sectors including agriculture, industry, and factories. Our commitment 
-                    to share all our successes with everyone. Finally everyone will pray a lot for Swapnotory the journey to be easy & smooth.
+                    First of all I thank the Almighty Allah. In the name of almighty Allah we have founded a company 
+                    named of the “Swapnotory” by some energetic young people. Basically our main focus is how we can 
+                     become self-sufficient by a little saving & investing. Our journey with this goal in mind. 
+                     The “swapnotory” spread beyond the borders of the country to the outside world it is our aim.  
+                     I also hope that the world will recognize the newly developed Bangladesh through this organization. 
+                      I hope many unemployed people will get employment through our company & will greatly contribute to 
+                       the country's economy. Our plan is to we are create all the practical products people need from the 
+                        time they wake up to the time they go to sleep. I believe “swapnotory” will contribute significantly 
+                         to the social development of the country and in all sectors including agriculture, industry, and 
+                         factories. Our commitment to share all our successes with everyone. Finally everyone will pray  
+                         a lot for Swapnotory the journey to be easy & smooth.
                 </p>
             </div>
 
@@ -204,6 +324,8 @@
 
         
     </div>
+
+
 
     <h1>Presidium Member</h1> 
     <div class="presidium-member">
