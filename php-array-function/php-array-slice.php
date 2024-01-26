@@ -1,9 +1,8 @@
 <?php include 'header.php';?>
         <section class="maincontent">
-         PHP Array Shift
-        <!--  
-            array search => 
-        -->
+         PHP Array slice
+<!--        
+         array slice : from which index or whick key you want to slice you array -->
 
        
         <span style="float: right;">
@@ -17,17 +16,17 @@
 
             <?php
 
-                $arrayOne = array("a"=>"red",
-                                  "b"=>"green",
-                                  "c"=>"blue",
-                                  "d"=>"yellow"
+                $arrayOne = array("red",
+                                  "green",
+                                  "blue",
+                                  "yellow"
                                 );
                 
-                array_shift($arrayOne);
+                $result = array_slice($arrayOne, 1, 2);
                 
 
                 print ("<pre>");
-                print_r($arrayOne);
+                print_r($result);
                 print ("<pre>");
 
                 
