@@ -21,7 +21,7 @@
 
             }
 
-            $personNameNage = new Person(); // object (class of object refer by new)
+            $personNameNage = new Person("Rakib","20"); // object (class of object refer by new)
             $personNameNage->name ="Rakib";
             $personNameNage-> personName();
             echo "<br>";
