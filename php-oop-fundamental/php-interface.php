@@ -25,9 +25,11 @@
                         public function mySchool(){
                                 echo "Im a school Teacher.<br>";
                         }
+
                         public function myCollege(){
                                 echo "Im a College Teacher.<br>";
                         }
+                        
                         public function myUniversity(){
                                 echo "Im a University Teacher.<br> ";
                         }
