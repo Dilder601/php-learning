@@ -3,7 +3,7 @@
 
 <section class="maincontent">
 
-       <!-- Autoload Classes   -->
+       <!-- Method Changing   -->
        <?php
 
               function my_autoload($class_name)
@@ -13,10 +13,11 @@
 
               spl_autoload_register('my_autoload');
 
-              $ruby = new Ruby;
-              $java = new Java;
-              // $php  = new Php;
-        
+              
+              
+
+              $cal  = new Calculation;
+              echo "Result is:". $cal->getValue(3,5)->getResult();
 
 
        ?>
