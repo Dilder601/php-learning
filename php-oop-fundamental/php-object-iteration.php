@@ -14,7 +14,7 @@
               spl_autoload_register('my_autoload');
 
               
-             $person = new Person;
+          //   $person = new Person;
 
               foreach ($person as $key => $value) {
                   echo "<pre>";
