@@ -20,4 +20,10 @@ class Language{
         return $this -> framework;
     }
 
+    public function __clone(){
+        $lang = new Language();
+        $lang -> setFramework($this->framework);
+        return $lang;
+    }
+
 }
