@@ -1,32 +1,20 @@
 <?php
 
 class Database{
-    public $driver;
-    public $link;
 
-    public function setDriver($driver){
-        $this ->driver = $driver;
-    }
+    private static $instance = null;
 
-    public function connect(){
-        if ($this-> driver == "mysql"){
-            $mngMysql = new ManageMysql();
-            $mngMysql -> setHost($host);
-            $mngMysql -> setDb($db);
-            $mngMysql -> setUsername($username);
-            $mngMysql -> setPassword($password);
-            $this->link = $mngMysql -> connect();
-            
-        }else if($this -> driver =="sqlite"){
-            $mngSqlLite = new ManageSqlLite();
-            $mngSqlLite -> setHost($host);
-            $mngSqlLite -> setDb($db);
-            $mngSqlLite -> setUsername($username);
-            $mngSqlLite -> setPassword($password);
-            $this->link = $mngSqlLite -> connect();
+    public function __construct()
+    {
+        if (self::$instance == null) {
+            self::$instance = $this;
+            echo "Created New One.<br>";
+            return self::$instance;
+        }else{
+            echo "Already Created.<br>";
+            return self::$instance;
         }
+           
     }
-
-
 
 }
