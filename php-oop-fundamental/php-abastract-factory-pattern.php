@@ -17,7 +17,7 @@ spl_autoload_register('my_autoload');
 
 
 
-$db = new Database();
+$db = new Database2();
 $db -> setDriver("mysql");
 $db -> connect("host","user","db","pass");
 
