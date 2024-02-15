@@ -44,7 +44,7 @@ if ($result) {
 */
 
 // preared statement
-
+/*
 $sql = "select name, skill from tbl_user";
 $stmt = $db -> prepare($sql);
 $stmt -> execute();
@@ -52,7 +52,32 @@ $stmt -> bind_result($name, $skill);
 while ($stmt -> fetch()){
     echo "$skill <br>";
 }
+*/
 
+// insert statement using prepared bind variable
+
+
+$sql = "insert into tbl_user(name, email, skill) values(?,?,?)";
+
+$stmt = $db -> prepare($sql);
+
+// "sss" its datatype
+
+$stmt -> bind_param("sss", $name, $email, $skill);
+
+$name = "Ariful";
+$email = "ariful@gmail.com";
+$skill = "React";
+
+$stmt -> execute();
+$stmt -> close();
+$db -> close();
+echo "Data inserted successfully";
+echo "<br>";
+
+
+
+  
 
 
 
