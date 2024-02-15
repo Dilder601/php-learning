@@ -33,16 +33,25 @@ while ($data = $result->fetch_object()){
 */
 
 
-
 // for update statement
-
+/*
 $sql = "UPDATE tbl_user SET skill = 'PHP' WHERE id = '1'";
 $result = $db -> query($sql);
 
 if ($result) {
     echo "Data updated successfully";
 }
+*/
 
+// preared statement
+
+$sql = "select name, skill from tbl_user";
+$stmt = $db -> prepare($sql);
+$stmt -> execute();
+$stmt -> bind_result($name, $skill);
+while ($stmt -> fetch()){
+    echo "$skill <br>";
+}
 
 
 
