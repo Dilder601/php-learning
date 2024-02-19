@@ -1,4 +1,24 @@
 <?php include "inc/header.php"; ?>
+
+<?php
+// include call classes from classes folder
+
+spl_autoload_register(function ($class){
+  include "classes/".$class.".php";
+});
+
+?>
+
+<?php 
+
+
+
+  $user = new Student();
+ 
+
+?>
+
+
 <section class="mainleft">
 <form action="" method="post">
  <table>
@@ -39,48 +59,35 @@
         <th>Action</th>
     </tr>
 
+    <?php
+
+      $i = 0;
+      foreach ($user->readAll() as $key => $value){
+        $i++;
+    ?>
+
     <tr>
-        <td>01</td>
-        <td>Ariful Islam</td>
-        <td>CSE</td>
-        <td>19</td>
+        <td><?php echo $i; ?></td>
+        <td><?php echo $value['name']; ?></td>
+        <td><?php echo $value['dep']; ?></td>
+        <td><?php echo $value['age']; ?></td>
         <td>
         <a href="">Edit</a> ||
         <a href="">Delete</a>
         </td>
     </tr>
 
-    <tr>
-        <td>02</td>
-        <td>Delowar Jahan</td>
-        <td>Physics</td>
-        <td>25</td>
-        <td>
-        <a href="">Edit</a> ||
-        <a href="">Delete</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>03</td>
-        <td>Kamrul Hasan</td>
-        <td>Physics</td>
-        <td>25</td>
-        <td>
-        <a href="">Edit</a> ||
-        <a href="">Delete</a>
-        </td>
-    </tr>
+      <?php } ?>
+ 
   </table>
 </section>
 
 
 
 
-
-
-
-
-
-
 <?php include "inc/footer.php"; ?>
+
+
+
+
+

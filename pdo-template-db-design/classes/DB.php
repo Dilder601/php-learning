@@ -14,6 +14,11 @@ class DB
                 echo $e->getMessage();
             }
         }
+        return self::$pdo;
     }
+    public static function prepare($sql){
+        return self::connection()->prepare($sql);
+    }
+
 }
 ?>
