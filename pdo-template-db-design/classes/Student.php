@@ -21,7 +21,7 @@ class Student{
     public function setAge($age){
         $this->age = $age;
     }
-
+    // insert new student
     public function create(){
         $sql = "INSERT INTO {$this -> table} (name, dep, age) VALUES (:name, :dep, :age)";
         $stmt = DB::prepare($sql);
@@ -30,7 +30,7 @@ class Student{
         $stmt->bindParam(':age', $this->age);
         return $stmt->execute();
     }
-
+    // update new student
     public function update(){
         $sql = "UPDATE {$this -> table} SET name = :name, dep = :dep, age = :age WHERE id = :id";
         $stmt = DB::prepare($sql);
@@ -40,7 +40,7 @@ class Student{
         return $stmt->execute();
     }
 
-
+  // get new student
     public function readById($id){
         $sql = "SELECT * FROM {$this -> table} WHERE id = :id";
         $stmt = DB::prepare($sql);
