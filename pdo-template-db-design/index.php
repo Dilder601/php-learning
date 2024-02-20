@@ -9,6 +9,8 @@ spl_autoload_register(function ($class) {
 
 ?>
 
+<section class="mainleft">
+
 <?php
 
 
@@ -28,10 +30,62 @@ if (isset($_POST['create'])){
 }
 
 
+if (isset($_POST['update'])){
+  $id = $_POST['id'];
+  $name = $_POST['name'];
+  $dep = $_POST['dep'];
+  $age = $_POST['age'];
+
+  $user->setName($name);
+  $user->setDep($dep);
+  $user->setAge($age);
+  if ($user-> update($id)){
+    echo "<span class ='insert'> Data Updated </span>";
+  }
+}
+
+
 ?>
 
+<?php 
 
-<section class="mainleft">
+if (isset($_GET['action']) && $_GET['action'] == 'update'){
+    $id = (int)$_GET['id'];
+    $result = $user->readById($id);
+ 
+
+?>
+
+<form action="" method="post">
+    <table> 
+      <input type="hidden" name="id" value="<?php echo $result['id'] ?>" />
+      <tr>
+        <td>Name: </td>
+        <td><input type="text" name="name" value="<?php echo $result['name'] ?>" required="1" /></td>
+      </tr>
+
+      <tr>
+        <td>Department: </td>
+        <td><input type="text" name="dep" value="<?php echo $result['dep'] ?>" required="1" /></td>
+      </tr>
+
+      <tr>
+        <td>Age: </td>
+        <td><input type="text" name="age" value="<?php echo $result['age'] ?>" required="1" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" name="update" value="Submit" />
+          <input type="reset" value="Clear" />
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <?php } else { ?>
+
+
   <form action="" method="post">
     <table>
       <tr>
@@ -57,6 +111,9 @@ if (isset($_POST['create'])){
       </tr>
     </table>
   </form>
+
+<?php } ?>
+
 </section>
 
 
@@ -84,7 +141,7 @@ if (isset($_POST['create'])){
         <td><?php echo $value['dep']; ?></td>
         <td><?php echo $value['age']; ?></td>
         <td>
-          <a href="">Edit</a> ||
+          <?php echo "<a href='index.php?action=update&id=".$value['id']."'> Edit </a>" ?> ||
           <a href="">Delete</a>
         </td>
       </tr>
