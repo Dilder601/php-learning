@@ -1,11 +1,11 @@
- <?php include 'DB.php'; ?>
+ <?php include 'main.php'; ?>
  
  <?php
 
 
-class Student{
+class Student extends Main{
 
-    private $table ='tbl_student';
+    protected $table ='tbl_student';
     private $name="";
     private $dep;
     private $age;
@@ -42,31 +42,6 @@ class Student{
     }
     
 
-  // get new student
-    public function readById($id){
-        $sql = "SELECT * FROM {$this -> table} WHERE id = :id";
-        $stmt = DB::prepare($sql);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-
-    public function readAll(){ 
-
-        $sql = "SELECT * FROM {$this -> table}";
-        $stmt = DB::prepare($sql);      
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
-    // delete  student
-
-    public function delete($id){
-        $sql = "DELETE FROM {$this -> table} WHERE id = :id";
-        $stmt = DB::prepare($sql);
-        $stmt->bindParam(':id', $id);
-        return $stmt->execute();
-    }
 }
 
 ?>
