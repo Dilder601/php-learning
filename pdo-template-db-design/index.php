@@ -18,12 +18,12 @@ spl_autoload_register(function ($class) {
 $user = new Student();
 if (isset($_POST['create'])){
   $name = $_POST['name'];
-  $dep = $_POST['dep'];
-  $age = $_POST['age'];
+  $dep  = $_POST['dep'];
+  $age  = $_POST['age'];
 
-  $user->setName($name);
-  $user->setDep($dep);
-  $user->setAge($age);
+  $user -> setName($name);
+  $user -> setDep($dep);
+  $user -> setAge($age);
   if ($user-> create()){
     echo "<span class ='insert'> Data Inserted </span>";
   }
@@ -31,19 +31,30 @@ if (isset($_POST['create'])){
 
 
 if (isset($_POST['update'])){
-  $id = $_POST['id'];
+  $id   = $_POST['id'];
   $name = $_POST['name'];
-  $dep = $_POST['dep'];
-  $age = $_POST['age'];
+  $dep  = $_POST['dep'];
+  $age  = $_POST['age'];
 
-  $user->setName($name);
-  $user->setDep($dep);
-  $user->setAge($age);
+  $user -> setName($name);
+  $user -> setDep($dep);
+  $user -> setAge($age);
   if ($user-> update($id)){
     echo "<span class ='insert'> Data Updated </span>";
   }
 }
 
+?>
+
+<?php
+
+if (isset($_GET['action']) && $_GET['action'] == 'delete'){
+  $id = (int)$_GET['id'];
+  $result = $user->readById($id);
+  if ($user->delete($id)){
+    echo "<span class ='delete'> Data Deleted </span>";
+  }
+}
 
 ?>
 
@@ -55,6 +66,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'update'){
  
 
 ?>
+
+
+
 
 <form action="" method="post">
     <table> 
@@ -142,7 +156,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'update'){
         <td><?php echo $value['age']; ?></td>
         <td>
           <?php echo "<a href='index.php?action=update&id=".$value['id']."'> Edit </a>" ?> ||
-          <a href="">Delete</a>
+          <?php echo "<a href='index.php?action=delete&id=".$value['id']."'> Delete </a>" ?>
         </td>
       </tr>
 

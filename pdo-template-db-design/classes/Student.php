@@ -31,14 +31,16 @@ class Student{
         return $stmt->execute();
     }
     // update new student
-    public function update(){
+    public function update($id){
         $sql = "UPDATE {$this -> table} SET name = :name, dep = :dep, age = :age WHERE id = :id";
         $stmt = DB::prepare($sql);
         $stmt->bindParam(':name', $this->name);
-        $stmt->bindParam(':dep', $this->dep);
-        $stmt->bindParam(':age', $this->age); 
+        $stmt->bindParam(':dep',  $this->dep);
+        $stmt->bindParam(':age',  $this->age); 
+        $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
+    
 
   // get new student
     public function readById($id){
@@ -55,6 +57,15 @@ class Student{
         $stmt = DB::prepare($sql);      
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    // delete  student
+
+    public function delete($id){
+        $sql = "DELETE FROM {$this -> table} WHERE id = :id";
+        $stmt = DB::prepare($sql);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
     }
 }
 
