@@ -2,15 +2,15 @@
 
   <footer class="footeroption">
 	  <section class="footerone">
-	  <p>Delowar Jahan Imran</p>
+	  <p>Dilder Hossain</p>
 	  <p>Oracle Certified Professional,</p>
-	  <p>Java SE 6 Programmer</p>
+	  <p>Oracle DB, Oracle Apex, PHP</p>
 	  
 	  </section>
 	  <section class="footerone">
-		  <p>FB Page: facebook.com/ProDelowar</p>
-		  <p>FB Group: facebook.com/groups/PBPTBD</p>
-		  <p>Web: www.trainingWithLiveProject.com</p>
+		  <p>FB Page: Oracle apex learner Bd</p>
+		  <p>FB Group: Oracle apex learner Bd</p>
+		  <p>Web: https://dilder.vercel.app/</p>
 	  </section>
   </footer>
 
