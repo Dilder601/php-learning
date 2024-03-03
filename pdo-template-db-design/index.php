@@ -41,6 +41,7 @@ if (isset($_POST['update'])){
   $user -> setAge($age);
   if ($user-> update($id)){
     echo "<span class ='insert'> Data Updated </span>";
+    header("Location: index.php");
   }
 }
 
