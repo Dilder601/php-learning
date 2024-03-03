@@ -142,6 +142,6 @@
   </header>
   <div class="content">
     <section class="subject">
-      <p>CRUD with PDO <span style="float:right"><a href="index.php">Create New</a></span>
+      <p>CRUD with PDO <span style="float:right"><a href="index.php">Create Student</a> || <a href="teacher.php">Create Teacher</a></span>
       <p>
     </section>
