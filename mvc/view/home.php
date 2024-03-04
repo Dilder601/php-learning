@@ -9,7 +9,7 @@
       <th>Age</th> 
     </tr>
 
-    <?php
+<?php
 
     $i = 0;
     foreach ($user as $key => $value) {
