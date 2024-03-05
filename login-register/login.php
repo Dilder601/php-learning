@@ -17,68 +17,31 @@ include 'inc/header.php';
 <body>
     <div class="container">
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="background-color: rgba(0, 0, 0, 0.05);" data-mdb-theme="light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Login Register System PHP & PDO</a>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="profile.php">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">Register</a>
-                        </li>
-                    </ul>
 
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar -->
 
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <h2>User Login <span class="justify-content-end"> <strong>Welcome</strong> Dilder</span> </h2>
+                <h2>User Login </h2>
             </div>
 
             <div class="panel-body">
-                <table class="table table-striped">
-                    <th width="20%">SL</th>
-                    <th width="20%">Name</th>
-                    <th width="20%">Username</th>
-                    <th width="20%">Email Address</th>
-                    <th width="20%">Action</th>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Dilder</td>
-                        <td>dilder</td>
-                        <td>dilder.hossain.feni@gmail.com</td>
-                        <td><a class="btn btn-primary" href="profile.php">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Dilder</td>
-                        <td>dilder</td>
-                        <td>dilder.hossain.feni@gmail.com</td>
-                        <td><a class="btn btn-primary" href="profile.php">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Dilder</td>
-                        <td>dilder</td>
-                        <td>dilder.hossain.feni@gmail.com</td>
-                        <td><a class="btn btn-primary" href="profile.php">View</a></td>
-                    </tr>
-
-                </table>
+                <form action="" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" required="" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label" >Password</label>
+                        <input type="password" class="form-control" required="" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
             </div>
 
@@ -86,6 +49,6 @@ include 'inc/header.php';
 
 
 
-<?php 
-include 'inc/footer.php';
-?>
+        <?php
+        include 'inc/footer.php';
+        ?>
