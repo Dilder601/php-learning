@@ -71,14 +71,15 @@ class User
 
 
 
-    public function getLoginUser($email, $password){
+    public function getLoginUser($email, $password)
+    {
         $sql = "SELECT * FROM tbl_user WHERE email = :email AND password = :password LIMIT 1";
         $query = $this->db->pdo->prepare($sql);
         $query->bindValue(':email', $email);
         $query->bindValue(':password', $password);
         $query->execute();
         $result = $query->fetch(PDO::FETCH_OBJ);
-        return $result; 
+        return $result;
 
         // if ($query->rowCount()>0){
         //     return true;
@@ -88,7 +89,8 @@ class User
     }
 
 
-    public function userLogin($data){
+    public function userLogin($data)
+    {
         $email      = $data['email'];
         $chk_email  = $this->emailCheck($email);
         $password   = md5($data['password']);
@@ -110,6 +112,17 @@ class User
         }
 
         $result = $this->getLoginUser($email, $password);
+        if ($result) {
+            Session::init();
+            Session::set("login", true);
+            Session::set("id", $result->id);
+            Session::set("name", $result->name);
+            Session::set("username", $result->username);
+            Session::set("loginmsg", "<div class='alert alert-success'><strong>Success !</strong> You are logged in successfully.</div>");
+            header("Location:index.php");
+        }else {
+            $msg = "<div class='alert alert-danger'><strong>Error !</strong> Data not found.</div>";
+            return $msg;
+        }
     }
-
 }
