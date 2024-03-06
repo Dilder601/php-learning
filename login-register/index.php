@@ -1,5 +1,7 @@
-<?php
-include 'inc/header.php';
+<?php 
+    include 'inc/header.php'; 
+    include 'library/user.php';
+    $user = new User();
 ?>
   <!-- Navbar -->
 
