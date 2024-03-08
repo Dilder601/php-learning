@@ -3,6 +3,10 @@
     include 'library/user.php';
     $user = new User();
 ?>
+
+<?php
+    $loginmsg = Session::get("loginmsg");
+?>
   <!-- Navbar -->
 
   <div class="panel panel-default">
