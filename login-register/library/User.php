@@ -106,8 +106,8 @@ class User
             return $msg;
         }
 
-        if ($chk_email == true) {
-            $msg = "<div class='alert alert-danger'><strong>Error !</strong> Email address already exist.</div>";
+        if ($chk_email == false) {
+            $msg = "<div class='alert alert-danger'><strong>Error !</strong> Email address not exist.</div>";
             return $msg;
         }
 
@@ -120,7 +120,7 @@ class User
             Session::set("username", $result->username);
             Session::set("loginmsg", "<div class='alert alert-success'><strong>Success !</strong> You are logged in successfully.</div>");
             header("Location:index.php");
-        }else {
+        } else {
             $msg = "<div class='alert alert-danger'><strong>Error !</strong> Data not found.</div>";
             return $msg;
         }

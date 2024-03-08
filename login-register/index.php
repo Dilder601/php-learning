@@ -6,13 +6,24 @@
 
 <?php
     $loginmsg = Session::get("loginmsg");
+    if(isset($loginmsg)){
+        echo $loginmsg;
+    }
+    Session::set("loginmsg", NULL);
 ?>
   <!-- Navbar -->
 
   <div class="panel panel-default">
 
 <div class="panel-heading">
-    <h2>User List <span class="justify-content-end"> <strong>Welcome</strong> Dilder</span> </h2>
+    <h2>User List <span class="justify-content-end"> <strong>Welcome</strong> 
+    <?php 
+        $name = Session::get("name"); 
+        if (isset($name)) {
+            echo $name;
+        }
+        ?>
+    </span> </h2>
 </div>
 
 <div class="panel-body">
