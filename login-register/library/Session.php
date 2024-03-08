@@ -28,4 +28,28 @@ class Session
             return false;
         }
     }
+
+    public static function checkSession()
+    {
+        self::init();
+        if (self::get("login") == false) {
+            self::destroy();
+            header("Location: login.php");
+        }
+    }
+
+    public static function checkLogin()
+    {
+        self::init();
+        if (self::get("login") == true) {
+            header("Location: login.php");
+        }
+    }
+
+    public static function destroy()
+    {
+        session_destroy();
+        unset($_SESSION);
+        header('Location: login.php');
+    }
 }
