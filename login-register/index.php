@@ -19,7 +19,7 @@ Session::set("loginmsg", NULL);
     <div class="panel-heading">
         <h2>User List <span class="justify-content-end"> Welcome <strong>
                     <?php
-                    $name = strtoupper (Session::get("username"));
+                    $name = strtoupper(Session::get("username"));
                     if (isset($name)) {
                         echo $name;
                     }
@@ -40,6 +40,7 @@ Session::set("loginmsg", NULL);
             <?php
             $user = new User();
             $userdata = $user->getUserData();
+            
             if ($userdata) {
                 $i = 0;
                 foreach ($userdata as $data) {
@@ -48,7 +49,7 @@ Session::set("loginmsg", NULL);
                     <tr>
                         <td><?php echo $i; ?></td>
                         <td> <?php echo $data['name']; ?> </td>
-                        <td><?php echo $data['username']; ?></td>  
+                        <td><?php echo $data['username']; ?></td>
                         <td><?php echo $data['email']; ?></td>
                         <td><a class="btn btn-primary" href="profile.php?id=<?php echo $data['id']; ?>">View</a></td>
                     </tr>

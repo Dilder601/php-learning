@@ -92,6 +92,7 @@ Session::checkSession();
                         ?>
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                 <button type="submit" name="update" id="update"  class="btn btn-primary btn-lg">Update</button>
+                                <a class="btn btn-success btn-lg" href="changepass.php?id= <?php echo $userid; ?>">Password Change</a>
                             </div>
                         <?php } ?>
 
